@@ -8,5 +8,7 @@
 <body>
     <button>    {% load socialaccount %}
         <a href="{% provider_login_url 'kakao' method='oauth2' %}">카카오 로그인</a></button>
+
+        <a href="{% url 'social:begin' 'kakao' %}">카카오톡으로 로그인하기</a>
 </body>
 </html>

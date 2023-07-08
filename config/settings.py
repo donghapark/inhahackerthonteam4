@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'user',
     'result',
     'allauth.socialaccount.providers.kakao',
+     'social_django',
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.kakao.KakaoOAuth2',
+)
+SOCIAL_AUTH_KAKAO_KEY = 'rest api'
+# SOCIAL_AUTH_KAKAO_SECRET = '시크릿_키'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
