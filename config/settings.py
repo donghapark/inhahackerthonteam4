@@ -141,8 +141,38 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = 'index' # 로그인 후 리디렉션할 페이지
-ACCOUNT_LOGOUT_REDIRECT_URL = "index"  # 로그아웃 후 리디렉션 할 페이지
+#SOCIALACCOUNT_LOGIN_ON_GET = True
+
+LOGIN_REDIRECT_URL = 'home' # 로그인 후 리디렉션할 페이지 # view
+
+'''
+LOGIN_REDIRECT_URL = 'index'일 경우 아래와 같은 오류 발생
+NoReverseMatch at /social-login/complete/kakao/
+Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+
+view에 index라는 이름의 함수나 패턴이 없기 때문에 발생하는 문제
+
+def home(request):
+    return render(request, 'index.html')
+    
+view를 확인해보니 index페이지로 가는 함수는 home 
+    
+'index' 를 -> 'home'으로 변경하면 해결
+
+프론트가 만들어준 메인 페이지를 index.html 대신 넣으면 완성~
+
+로그인하면 메인페이지로 넘어와서 test 시작 
+
+프론트에서 test 누르면 다음 페이지로 넘어가도록 만든 듯
+
+'''
+
+ACCOUNT_LOGOUT_REDIRECT_URL = "home"  # 로그아웃 후 리디렉션 할 페이지
+
+'''
+로그아웃 누르면 메인 페이지로 돌아가도록
+'''
+
 ACCOUNT_LOGOUT_ON_GET = True # 로그아웃 버튼 클릭 시 자동 로그아웃
 
 SITE_ID = 1
