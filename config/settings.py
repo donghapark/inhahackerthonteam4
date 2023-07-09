@@ -112,9 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.kakao.KakaoOAuth2',
 )
-SOCIAL_AUTH_KAKAO_KEY = 'rest api'
+
+SOCIAL_AUTH_KAKAO_KEY = secret_settings.SOCIAL_AUTH_KAKAO_KEY
+
+#SOCIAL_AUTH_KAKAO_KEY = 'rest api' #여기에 카카오에서 받은 키 입력
 # SOCIAL_AUTH_KAKAO_SECRET = '시크릿_키'
-SOCIAL_AUTH_KAKAO_SECRET = 'be4770019c42de6f2a5cf32107dee7ff'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
