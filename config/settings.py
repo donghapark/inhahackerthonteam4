@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import secret_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i*6@1ieub$z3_w$v66#6k$tl@wzer2&@^@zk=f$v+e%fc_i*=f'
 
+SECRET_KEY = secret_settings.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -113,6 +114,7 @@ AUTHENTICATION_BACKENDS = (
 )
 SOCIAL_AUTH_KAKAO_KEY = 'rest api'
 # SOCIAL_AUTH_KAKAO_SECRET = '시크릿_키'
+SOCIAL_AUTH_KAKAO_SECRET = 'be4770019c42de6f2a5cf32107dee7ff'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
